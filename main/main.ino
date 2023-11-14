@@ -121,7 +121,7 @@ void read_DHT11_sensor_and_send_data(){
 }
 
 ///TODO: soil_moisture
-void read_soil_moisture_sensor_and_send_data(
+void read_soil_moisture_sensor_and_send_data()(
   soil_moisture_value = anlogRead(soil_moisture_pin);
   Blynk.virtualWrite(soil_moisture_pin_blynk, soil_moisture_value);
 )
