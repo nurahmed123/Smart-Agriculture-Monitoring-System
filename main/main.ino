@@ -121,10 +121,10 @@ void read_DHT11_sensor_and_send_data(){
 }
 
 ///TODO: soil_moisture
-void read_soil_moisture_sensor_and_send_data()(
-  soil_moisture_value = anlogRead(soil_moisture_pin);
+void read_soil_moisture_sensor_and_send_data(){
+  soil_moisture_value = analogRead(soil_moisture_pin);
   Blynk.virtualWrite(soil_moisture_pin_blynk, soil_moisture_value);
-)
+}
 
 void solar_monnitor(){
 
@@ -153,5 +153,6 @@ void solar_monnitor(){
 void loop() {
   Blynk.run();
   solar_monnitor();
+  read_soil_moisture_sensor_and_send_data();
   read_DHT11_sensor_and_send_data();
 }
